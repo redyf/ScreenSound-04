@@ -1,8 +1,8 @@
 using System.Text.Json.Serialization;
 
-namespace ScreenSound_04;
+namespace ScreenSound_04.Models;
 
-internal class Musica
+public class Musica
 {
     [JsonPropertyName("song")]
     public string Nome { get; set; }
