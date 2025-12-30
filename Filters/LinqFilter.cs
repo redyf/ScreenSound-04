@@ -29,6 +29,12 @@ public class LinqFilter
         musicasDoArtista.ForEach(musica => Console.WriteLine($"- {musica.Nome}"));
     }
 
+    public static void FiltrarMusicasPorAno(List<Musica> musicas, int ano)
+    {
+        var filtrarMusicasPorAno = musicas.Where(musica => musica.Ano == ano).OrderBy(musica => musica.Ano).Distinct().ToList();
+        filtrarMusicasPorAno.ForEach(musica => Console.WriteLine($"A música {musica.Nome} é do ano {ano}"));
+    }
+
     public static void NumerosUnicosNaLista(List<int> numeros)
     {
         var numerosUnicos = numeros.Distinct().ToList();
