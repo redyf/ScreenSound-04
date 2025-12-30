@@ -62,4 +62,11 @@ public class LinqFilter
         var filtraNumerosPares = numeros.Where(num => num % 2 == 0).ToList();
         filtraNumerosPares.ForEach(num => Console.WriteLine($"O número {num} é par"));
     }
+
+    public static void FiltraMusicasPelaTonalidade(List<Musica> musicas, string tonalidade)
+    {
+        var filtraMusicasComBaseNaTonalidade = musicas.Where(musica => musica.Tonalidade == tonalidade).OrderBy(musica => musica.Nome).Select(musica => musica.Nome).Distinct().ToList();
+        Console.WriteLine($"Essas sao as musicas com tonalidade {tonalidade}");
+        filtraMusicasComBaseNaTonalidade.ForEach(musica => Console.WriteLine(musica));
+    }
 }
